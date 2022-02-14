@@ -6,6 +6,7 @@ var router = express.Router();
 
 router.get('/getusers', User.getUser);
 router.patch('/updateuser/:userId', User.updateUser);
+router.patch('/updatepassword/:userId', User.updatePassword);
 router.delete('/deleteuser/:userId', User.deleteUser);
 
 module.exports = router;
