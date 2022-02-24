@@ -10,9 +10,9 @@ exports.register = async (req, res, next) => {
     const schema = Joi.object({
         first_name: Joi.string().min(3).max(50).trim(true).required(),
         last_name: Joi.string().min(3).max(50).trim(true).required(),
-        password: Joi.string().trim(true).required(),
         email: Joi.string().lowercase().min(6).max(50).email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
-        number: Joi.string().pattern(/^[0-9]+$/).required()
+        number: Joi.string().pattern(/^[0-9]+$/).required(),
+        password: Joi.string().trim(true).required()
     })
 
     var {error} = await schema.validate(req.body);
