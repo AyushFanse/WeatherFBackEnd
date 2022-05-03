@@ -14,6 +14,17 @@ exports.getUser = async(req, res, next)=>{
   }
   };
 
+  
+///////////////////////////* Get All Users From DataBase *////////////////////////////
+
+exports.getUserById = async(req, res, next)=>{
+  try{
+    var response = await User.findById(req.params.id);
+    res.status(200).send(response);
+  }catch(err){
+    res.status(400).send(err);
+}
+};
 
   ///////////////////////////* Update User By Id *////////////////////////////
 
