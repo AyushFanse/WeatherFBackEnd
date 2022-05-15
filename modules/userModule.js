@@ -1,6 +1,5 @@
 const User = require('../model/User');
 const  bcrypt = require('bcrypt');
-const Joi = require('joi');
 
 
 ///////////////////////////* Get All Users From DataBase *////////////////////////////
