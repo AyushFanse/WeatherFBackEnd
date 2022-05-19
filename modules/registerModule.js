@@ -36,7 +36,7 @@ exports.register = async (req, res, next) => {
     })
     try {
         var response = await user.save();
-        res.status(200).send({ msg: "You Have Successfully Registered Your Account..!", status: "success" }).send(response);
+        res.status(201).send({ msg: "You Have Successfully Registered Your Account..!", status: "success" }).send(response);
     } catch (err) {
         res.status(400).send(err);
     }
