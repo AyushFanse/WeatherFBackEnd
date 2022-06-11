@@ -12,7 +12,7 @@ exports.mailer = async (req, res) => {
     secure: true,
     auth: {
       user: process.env.EMAIL, // generated ethereal user
-      pass: process.env.EMAIL_SECRATE, // generated ethereal password
+      pass: process.env.EMAIL_SECRATE_PHONE || process.env.EMAIL_SECRATE_WEB, // generated ethereal password
     },
   });
 
