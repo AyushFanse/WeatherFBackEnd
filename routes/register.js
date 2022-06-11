@@ -10,4 +10,9 @@ router.post('/registeruser', Register.register);
 
 router.post('/login', Register.login);
 
+//----------------------------* Forgot password *----------------------------//
+
+router.post('/forgotpassword', Register.forgotpassword);
+
+
 module.exports = router;
