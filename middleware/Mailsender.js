@@ -1,8 +1,9 @@
 const nodemailer = require("nodemailer");
 
 exports.mailer = async (req, res) => {
-  // Generate test SMTP service account from ethereal.email
-  // Only needed if you don't have a real mail account for testing
+// Generate test SMTP service account from ethereal.email
+// Only needed if you don't have a real mail account for testing
+
   let testAccount = await nodemailer.createTestAccount();
 
   // create reusable transporter object using the default SMTP transport
@@ -12,7 +13,7 @@ exports.mailer = async (req, res) => {
     secure: true,
     auth: {
       user: process.env.EMAIL, // generated ethereal user
-      pass: process.env.EMAIL_SECRATE_PHONE || process.env.EMAIL_SECRATE_WEB, // generated ethereal password
+      pass: process.env.EMAIL_SECRATE_WEB, // generated ethereal password
     },
   });
 

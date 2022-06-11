@@ -2,6 +2,7 @@ const User = require('../model/User');
 const Joi = require('joi');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const Mailer = require("../middleware/Mailsender");
 
 
 ////////////////////////* Registration Part *////////////////////////
@@ -105,7 +106,7 @@ exports.forgotpassword = async (req, res, next) => {
       token: token,
     };
 
-    await Mailer.mailer(data);    
+    let mailer = await Mailer.mailer(data);    
     res.status(200).send({ msg: "Reset password link has been sent to your mail." });
   } catch (err) {
     res.status(400).send(err);

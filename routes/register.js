@@ -14,5 +14,4 @@ router.post('/login', Register.login);
 
 router.post('/forgotpassword', Register.forgotpassword);
 
-
-module.exports = router;
+module.exports = router;    
