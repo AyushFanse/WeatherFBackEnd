@@ -22,8 +22,11 @@ const userSchema = new Schema({
     },
     password:{
         type : String,
-        required : true,
-        minLength: 5
+        minLength: 4
+    },
+    g_password:{
+        type : String,
+        minLength: 4
     },
     email:{
         type : String,
