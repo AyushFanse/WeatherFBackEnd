@@ -106,7 +106,7 @@ exports.forgotpassword = async (req, res, next) => {
       token: token,
     };
 
-    let mailer = await Mailer.mailer(data);    
+    await Mailer.mailer(data);    
     res.status(200).send({ msg: "Reset password link has been sent to your mail." });
   } catch (err) {
     res.status(400).send(err);
